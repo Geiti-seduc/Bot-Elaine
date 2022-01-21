@@ -1,0 +1,23 @@
+{
+  "name": "bot-elaine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Geiti-seduc/Bot-Elaine.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Geiti-seduc/Bot-Elaine/issues"
+  },
+  "homepage": "https://github.com/Geiti-seduc/Bot-Elaine#readme",
+  "dependencies": {
+    "venom-bot": "^4.0.5"
+  }
+}
