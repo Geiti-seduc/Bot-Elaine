@@ -12,7 +12,7 @@ venom
 
   function start(client) {
     
-    client.onMessage((message) => {
+    client.onMessage( async (message) => {
         let resp = step[getStage(message.from)].obj.execute(
             message.from, //Usuário
             message.body, //Resposta do Usuário
@@ -24,7 +24,7 @@ venom
           if (db[message.from].stage == 2) {
             step[getStage(message.from)].obj.execute(message.from);
           }
-        client
+        await client
           .sendText(message.from,resp)
           .then((result) => {
             console.log('Result: ', result); //return object success
@@ -32,9 +32,17 @@ venom
           .catch((erro) => {
             console.error('Error when sending: ', erro); //return object error
           });
-          
-      
+    let response = await client
+          .sendButtons(message.from,'Titulo',buttons,'subtilu')
+          .then((result) => {
+            console.log('Result: ', result); //return object success
+          })
+          .catch((erro) => {
+            console.error('Error when sending: ', erro); //return object error
+          });        
+    
     });
+    
   }
 
   function getStage(user) {
@@ -56,3 +64,5 @@ venom
       return db[user].stage;
     }
   }
+
+module.exports = response;
