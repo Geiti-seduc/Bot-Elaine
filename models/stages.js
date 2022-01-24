@@ -10,6 +10,10 @@ let stages = {
 		descricao: "Motivo do chamado",
 		obj: require('../stages/stage1')
 	},
+	2:{
+		descricao: "Subdescrição",
+		obj: require('../stages/stage2')
+	},
 }
 
 

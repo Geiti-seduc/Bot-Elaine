@@ -1,46 +1,45 @@
 const venom = require('venom-bot');
 const { db } = require('../Bot-Elaine/models/db');
 const { step } = require('../Bot-Elaine/models/stages');
-const {buttons} = require('../Bot-Elaine/options/options');
+const {buttons,stag2} = require('../Bot-Elaine/options/options');
 
 
 
 venom
-  .create()
+  .create({
+    session: 'session-name', //name of session
+    multidevice: false // for version not multidevice use false.(default: true)
+  })
   .then((client) => start(client))
-  .catch((erro) => console.log(erro));
+  .catch((erro) => {
+    console.log(erro);
+  });
 
   function start(client) {
     
-    client.onMessage( async (message) => {
-        let resp = step[getStage(message.from)].obj.execute(
-            message.from, //Usuário
-            message.body, //Resposta do Usuário
-            message.sender.name //Nome do usuário
-          );
-      
-          console.log(db[message.from]);
-      
-          if (db[message.from].stage == 2) {
-            step[getStage(message.from)].obj.execute(message.from);
-          }
-        await client
-          .sendText(message.from,resp)
+    client.onMessage(async (message) => {
+      let resp = step[getStage(message.from)].obj.execute(
+        message.from, //Usuário
+        message.body, //Resposta do Usuário
+        message.sender.name //Nome do usuário
+      );
+      console.log(db[message.from]);
+
+      if (db[message.from].stage == 4) {
+        step[getStage(message.from)].obj.execute(message.from);
+      }
+     
+        if(resp){
+          await client.sendButtons(message.from,"Titulo 1",buttons, 'sub')
           .then((result) => {
             console.log('Result: ', result); //return object success
           })
           .catch((erro) => {
             console.error('Error when sending: ', erro); //return object error
           });
-    let response = await client
-          .sendButtons(message.from,'Titulo',buttons,'subtilu')
-          .then((result) => {
-            console.log('Result: ', result); //return object success
-          })
-          .catch((erro) => {
-            console.error('Error when sending: ', erro); //return object error
-          });        
-    
+        }
+      
+     
     });
     
   }
@@ -65,4 +64,4 @@ venom
     }
   }
 
-module.exports = response;
+
