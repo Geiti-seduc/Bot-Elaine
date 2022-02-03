@@ -1,3 +1,2 @@
-2022/01/24-09:06:17.738 2064 Reusing MANIFEST C:\Users\Lucas Henrique\Documents\GitHub\Bot-Elaine\tokens\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2022/01/24-09:06:17.739 2064 Recovering log #3
-2022/01/24-09:06:17.763 2064 Reusing old log C:\Users\Lucas Henrique\Documents\GitHub\Bot-Elaine\tokens\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000003.log 
+2022/02/03-17:58:24.767 2514 Creating DB C:\Users\Lucas Henrique\Documents\GitHub\Bot-Elaine\tokens\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb since it was missing.
+2022/02/03-17:58:24.775 2514 Reusing MANIFEST C:\Users\Lucas Henrique\Documents\GitHub\Bot-Elaine\tokens\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001

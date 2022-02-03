@@ -1,3 +1,2 @@
-2022/01/24-09:06:17.865 2d14 Reusing MANIFEST C:\Users\Lucas Henrique\Documents\GitHub\Bot-Elaine\tokens\session\Default\File System\Origins/MANIFEST-000001
-2022/01/24-09:06:17.865 2d14 Recovering log #3
-2022/01/24-09:06:17.865 2d14 Reusing old log C:\Users\Lucas Henrique\Documents\GitHub\Bot-Elaine\tokens\session\Default\File System\Origins/000003.log 
+2022/02/03-17:58:27.599 1c90 Creating DB C:\Users\Lucas Henrique\Documents\GitHub\Bot-Elaine\tokens\session\Default\File System\Origins since it was missing.
+2022/02/03-17:58:27.609 1c90 Reusing MANIFEST C:\Users\Lucas Henrique\Documents\GitHub\Bot-Elaine\tokens\session\Default\File System\Origins/MANIFEST-000001

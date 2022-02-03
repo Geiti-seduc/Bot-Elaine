@@ -1,3 +1,2 @@
-2022/01/24-09:06:17.170 2d14 Reusing MANIFEST C:\Users\Lucas Henrique\Documents\GitHub\Bot-Elaine\tokens\session\Default\Local Storage\leveldb/MANIFEST-000001
-2022/01/24-09:06:17.171 2d14 Recovering log #4
-2022/01/24-09:06:17.172 2d14 Reusing old log C:\Users\Lucas Henrique\Documents\GitHub\Bot-Elaine\tokens\session\Default\Local Storage\leveldb/000004.log 
+2022/02/03-17:58:22.332 1c90 Creating DB C:\Users\Lucas Henrique\Documents\GitHub\Bot-Elaine\tokens\session\Default\Local Storage\leveldb since it was missing.
+2022/02/03-17:58:22.351 1c90 Reusing MANIFEST C:\Users\Lucas Henrique\Documents\GitHub\Bot-Elaine\tokens\session\Default\Local Storage\leveldb/MANIFEST-000001

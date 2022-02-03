@@ -1,2 +1,3 @@
-var db = {}
+var db = {};
+
 exports.db = db;
