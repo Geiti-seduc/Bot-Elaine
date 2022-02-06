@@ -1,6 +1,7 @@
 const venom = require('venom-bot');
 const { db } = require("./models/db");
 const nodemailer = require('nodemailer');
+const { problemas,setores } = require('./options/options');
 require("dotenv").config();
 
 venom
@@ -16,33 +17,47 @@ venom
       console.log(resp)
 
        if (resp == 0) {
-      
-          stage(client, message, "Escolha o seu problema", " ", "CLIQUE AQUI", list)
+                // Obtem a hora atual do PC para definir se vai ser Bom dia, tarde ou noite.
+          stamp = new Date();
+          hours = stamp.getHours();
+          if(hours >= 18 && hours < 24){
+              time = "Boa noite, nosso expediente é apenas de 7:00 AM até 18:00 PM.";
+          } else if(hours >= 12 && hours < 18){
+              time = "Boa tarde";
+          }else if(hours >= 0 && hours < 12){
+              time = "Bom dia";
+          }
+          stage(client, message, `${time}`, "Escolha o seu problema", "CLIQUE AQUI", problemas)
           db[message.from].stage = 1
           console.log(db[message.from])
 
        }else if (resp == 1){
+
           db[message.from].call.reason = message.body
-          stage(client, message, "Escolha o seu setor", " ", "CLIQUE AQUI", list2)
+          stage(client, message, "Escolha o seu setor", " ", "CLIQUE AQUI", setores)
           db[message.from].stage = 2
           console.log(db[message.from])
+
        }else if (resp == 2){
+
           db[message.from].call.location = message.body
           nome(client,message)
           db[message.from].stage = 3
           console.log(db[message.from])
+
       }
       else if(resp == 3){
+
+          db[message.from].call.person = message.body
           email(message.from)
           console.log(db[message.from])
-          return ``
+          gif(client,message)
+          
       }
     });
   }
-
-
-  function getStage(user) {
-    
+  //***** FUNÇÃO DOS STAGES *****
+  function getStage(user) {   
     if (db[user]) {
       //se o usuário já estiver cadastrado
       return db[user].stage;
@@ -53,16 +68,16 @@ venom
         call: {
           location: "",
           person: "",
-          reason: "",
-         
+          reason: "",      
         },
-      };
-      
+      };    
       return db[user].stage;
     }
   }
 
 
+
+// ***** FUNÇÕES PARA INTERAÇÃO DO USUÁRIO *****
 function stage(client, sender, titulo, description, menu, lista) {
     
     client.sendListMenu(sender.from, titulo, 'subTitle', description, menu, lista)
@@ -87,6 +102,17 @@ function nome(client,message) {
   });
 }
 
+function gif(client,message){
+ client.sendVideoAsGif(
+    message.from,
+    './images/sendmail.mp4',
+    'sendmail.gif',
+    'E-mail enviado, estaremos enviando um técnico o mais rápido o possível! '
+  ); 
+}
+
+
+//***** ENVIO DO EMAIL *****
 function email(user) {
     let transpoter = nodemailer.createTransport({
         service: "Gmail",
@@ -114,188 +140,3 @@ function email(user) {
     db[user].stage = 0;
 }
 
-const list = [
-  {
-    title: "Computador",
-    rows: [
-      {
-        title: "Computador não liga",
-        description: " ",
-      },
-      {
-        title: "Remanejamento de computadores",
-        description: " ",
-      },
-      {
-        title: "Devolução de equipamento",
-        description: " ",
-      }
-    ]
-  },
-  {
-    title: "Suporte ao usuário",
-    rows: [
-      {
-        title: "Instalação de programa",
-        description: " ",
-      }
-    ]
-  },
-  {
-    title: "Internet",
-    rows: [
-      {
-        title: "Sem internet",
-        description: " ",
-      },
-      {
-        title: "Conectar dispositivo na rede",
-        description: " ",
-      }
-    ]
-  },
-  {
-    title: "Impressora",
-    rows: [
-      {
-        title: "Conectar impressora",
-        description: " ",
-      },
-      {
-        title: "Não esta imprimindo",
-        description: " ",
-      },
-      {
-        title: "Troca de tôner",
-        description: " ",
-      }
-    ]
-  },
-  {
-    title: "Equipamento",
-    rows: [
-      {
-        title: "Solicitação de equipamento: Mouse ou teclado",
-        description: " ",
-      },
-      {
-        title: "Teclado ou mouse com defeito",
-        description: " ",
-      }
-    ]
-  },
-  {
-    title: "Nobreak",
-    rows: [
-      {
-        title: "Nobreak não liga",
-        description: " ",
-      }
-    ]
-  },
-  
-];
-
-const list2 = [
-  {
-    title: "Lista de setor",
-    rows: [
-      {
-        title: "SUVPE",
-        description: " ",
-      },
-      {
-        title: "SUVPE - SUBRF",
-        description: " ",
-      },
-      {
-        title: "SUFIC",
-        description: " ",
-      },
-      {
-        title: "SUPLOR",
-        description: " ",
-      },
-      {
-        title: "SUPLOR - ASSESSORIA",
-        description: " ",
-      },
-      {
-        title: "ESTATÍSTICA",
-        description: " ",
-      },
-      {
-        title: "SUAD - FROTA ADMINISTRATIVA",
-        description: " ",
-      },
-      {
-        title: "SUAD - CHEFIA ADMINISTRATIVA",
-        description: " ",
-      },
-      {
-        title: "SUAD - SUPERINTENDÊNCIA",
-        description: " ",
-      },
-      {
-        title: "SUAD - ALMOXARIFADO",
-        description: " ",
-      },
-      {
-        title: "SUAD - COMPRAS",
-        description: " ",
-      },
-      {
-        title: "13ª GERE",
-        description: " ",
-      },
-      {
-        title: "13ª GERE - FROTA ESCOLAR",
-        description: " ",
-      },
-      {
-        title: "SUETI - ARQUITETURA/ENGENHARIA",
-        description: " ",
-      },
-      {
-        title: "SUPED",
-        description: " ",
-      },
-      {
-        title: "ASE",
-        description: " ",
-      },
-      {
-        title: "ASCOM",
-        description: " ",
-      },
-      {
-        title: "GABINETE - SURE/SUSE",
-        description: " ",
-      },
-      {
-        title: "GABINETE - PROTOCOLO",
-        description: " ",
-      },
-      {
-        title: "GABINETE - COMISSÃO DE TRANSPORTE",
-        description: " ",
-      },
-      {
-        title: "CHEFIA DE GABINETE",
-        description: " ",
-      },
-      {
-        title: "NUCAD",
-        description: " ",
-      },
-      {
-        title: "CENFOR",
-        description: " ",
-      },
-      {
-        title: "CENFOR - SURE",
-        description: " ",
-      },
-    ]
-  },
-];

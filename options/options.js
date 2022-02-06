@@ -1,44 +1,187 @@
-const list = [
+const problemas = [
   {
-    title: "Lista de problemas",
+    title: "Computador",
     rows: [
       {
-        title: "Ravioli Lasagna",
-        description: "Made with layers of frozen cheese",
+        title: "Computador não liga",
+        description: " ",
       },
       {
-        title: "Ravioli Lasagna",
-        description: "Made with layers of frozen cheese",
+        title: "Remanejamento de computadores",
+        description: " ",
       },
       {
-        title: "Ravioli Lasagna",
-        description: "Made with layers of frozen cheese",
+        title: "Devolução de equipamento",
+        description: " ",
+      }
+    ]
+  },
+  {
+    title: "Suporte ao usuário",
+    rows: [
+      {
+        title: "Instalação de programa",
+        description: " ",
+      }
+    ]
+  },
+  {
+    title: "Internet",
+    rows: [
+      {
+        title: "Sem internet",
+        description: " ",
       },
       {
-        title: "Ravioli Lasagna",
-        description: "Made with layers of frozen cheese",
+        title: "Conectar dispositivo na rede",
+        description: " ",
+      }
+    ]
+  },
+  {
+    title: "Impressora",
+    rows: [
+      {
+        title: "Conectar impressora",
+        description: " ",
       },
       {
-        title: "Ravioli Lasagna",
-        description: "Made with layers of frozen cheese",
+        title: "Não esta imprimindo",
+        description: " ",
       },
       {
-        title: "Ravioli Lasagna",
-        description: "Made with layers of frozen cheese",
+        title: "Troca de tôner",
+        description: " ",
+      }
+    ]
+  },
+  {
+    title: "Equipamento",
+    rows: [
+      {
+        title: "Solicitação de equipamento: Mouse ou teclado",
+        description: " ",
       },
       {
-        title: "Ravioli Lasagna",
-        description: "Made with layers of frozen cheese",
-      },
+        title: "Teclado ou mouse com defeito",
+        description: " ",
+      }
+    ]
+  },
+  {
+    title: "Nobreak",
+    rows: [
       {
-        title: "Ravioli Lasagna",
-        description: "Made with layers of frozen cheese",
-      },
-      {
-        title: "Ravioli Lasagna",
-        description: "Made with layers of frozen cheese",
-      },
+        title: "Nobreak não liga",
+        description: " ",
+      }
     ]
   },
   
 ];
+
+const setores = [
+  {
+    title: "Lista de setor",
+    rows: [
+      {
+        title: "SUVPE",
+        description: " ",
+      },
+      {
+        title: "SUVPE - SUBRF",
+        description: " ",
+      },
+      {
+        title: "SUFIC",
+        description: " ",
+      },
+      {
+        title: "SUPLOR",
+        description: " ",
+      },
+      {
+        title: "SUPLOR - ASSESSORIA",
+        description: " ",
+      },
+      {
+        title: "ESTATÍSTICA",
+        description: " ",
+      },
+      {
+        title: "SUAD - FROTA ADMINISTRATIVA",
+        description: " ",
+      },
+      {
+        title: "SUAD - CHEFIA ADMINISTRATIVA",
+        description: " ",
+      },
+      {
+        title: "SUAD - SUPERINTENDÊNCIA",
+        description: " ",
+      },
+      {
+        title: "SUAD - ALMOXARIFADO",
+        description: " ",
+      },
+      {
+        title: "SUAD - COMPRAS",
+        description: " ",
+      },
+      {
+        title: "13ª GERE",
+        description: " ",
+      },
+      {
+        title: "13ª GERE - FROTA ESCOLAR",
+        description: " ",
+      },
+      {
+        title: "SUETI - ARQUITETURA/ENGENHARIA",
+        description: " ",
+      },
+      {
+        title: "SUPED",
+        description: " ",
+      },
+      {
+        title: "ASE",
+        description: " ",
+      },
+      {
+        title: "ASCOM",
+        description: " ",
+      },
+      {
+        title: "GABINETE - SURE/SUSE",
+        description: " ",
+      },
+      {
+        title: "GABINETE - PROTOCOLO",
+        description: " ",
+      },
+      {
+        title: "GABINETE - COMISSÃO DE TRANSPORTE",
+        description: " ",
+      },
+      {
+        title: "CHEFIA DE GABINETE",
+        description: " ",
+      },
+      {
+        title: "NUCAD",
+        description: " ",
+      },
+      {
+        title: "CENFOR",
+        description: " ",
+      },
+      {
+        title: "CENFOR - SURE",
+        description: " ",
+      },
+    ]
+  },
+];
+
+module.exports = {problemas,setores};
