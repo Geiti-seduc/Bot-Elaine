@@ -17,23 +17,25 @@ venom
 
        if (resp == 0) {
       
-         stage(client, message, "Escolha o seu problema", " ", "CLIQUE AQUI", list)
-         db[message.from].stage = 1
-         console.log(db[message.from])
+          stage(client, message, "Escolha o seu problema", " ", "CLIQUE AQUI", list)
+          db[message.from].stage = 1
+          console.log(db[message.from])
 
        }else if (resp == 1){
-         db[message.from].call.reason = message.body
-         stage(client, message, "Escolha o seu setor", " ", "CLIQUE AQUI", list2)
-         db[message.from].stage = 2
-         console.log(db[message.from])
+          db[message.from].call.reason = message.body
+          stage(client, message, "Escolha o seu setor", " ", "CLIQUE AQUI", list2)
+          db[message.from].stage = 2
+          console.log(db[message.from])
        }else if (resp == 2){
-        db[message.from].call.location = message.body
-        nome(client,message)
-        db[message.from].stage = 3
-        console.log(db[message.from])
-      }else if(resp == 3){
-        email(message.from)
-        console.log(db[message.from])
+          db[message.from].call.location = message.body
+          nome(client,message)
+          db[message.from].stage = 3
+          console.log(db[message.from])
+      }
+      else if(resp == 3){
+          email(message.from)
+          console.log(db[message.from])
+          return ``
       }
     });
   }
