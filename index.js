@@ -36,22 +36,6 @@ venom
         console.log(db[message.from])
       }
     });
-  /*   client.onMessage((message) => {
-      let resp = step[getStage(message.from)].obj.execute(
-        message.from, //Usuário
-        message.body, //Resposta do Usuário
-        message.sender.name //Nome do usuário
-      );
-  
-      console.log(db[message.from]);
-  
-      if (db[message.from].stage == 5) {
-        step[getStage(message.from)].obj.execute(message.from);
-      }
-  
-      client.sendText(message.from, resp);
-    });
-     */
   }
 
 
