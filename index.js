@@ -125,7 +125,7 @@ function email(user) {
     let mailOptions = {
         from: `${process.env.USER_EMAIL}`,
         to: "suporte@educ.al.gov.br",
-        subject: db[user].call.reason,
+        subject:`${ db[user].call.reason}, ${Math.floor(Math.random() * 50000)}`,
         text: `Local: ${db[user].call.location}\nPessoa: ${db[user].call.person}`
     };
 
