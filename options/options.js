@@ -105,7 +105,7 @@ const setores = [
         description: " ",
       },
       {
-        title: "ESTATÍSTICA",
+        title: "ESTATÍSTICA-SHOPPING CIDADE",
         description: " ",
       },
       {
@@ -141,7 +141,7 @@ const setores = [
         description: " ",
       },
       {
-        title: "SUPED",
+        title: "SUPED-SHOPPING CIDADE",
         description: " ",
       },
       {
@@ -153,7 +153,7 @@ const setores = [
         description: " ",
       },
       {
-        title: "GABINETE - SURE/SUSE",
+        title: "SURE/SUSE- SHOPPING CIDADE",
         description: " ",
       },
       {
@@ -174,10 +174,6 @@ const setores = [
       },
       {
         title: "CENFOR",
-        description: " ",
-      },
-      {
-        title: "CENFOR - SURE",
         description: " ",
       },
     ]
